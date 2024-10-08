@@ -9,7 +9,6 @@ import org.typelevel.log4cats.slf4j.Slf4jLogger
 object Main extends IOApp {
 
   implicit val logger: Logger[IO] = Slf4jLogger.getLogger[IO]
-println(logger.getClass)
   override def run(args: List[String]): IO[ExitCode] = {
     for {
       config <- ServiceConf.load[IO]
